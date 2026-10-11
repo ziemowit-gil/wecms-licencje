@@ -12,13 +12,13 @@ przedłużanie, unieważnianie, dziennik zmian i API do sprawdzania licencji onl
 - Unieważnienie i zastąpienie widać tylko w panelu i w API `POST /api/v1/licenses/check` —
   podpisany klucz sam w sobie jest ważny do daty w nim zapisanej.
 
-## Wdrożenie (cms2.ziemowitgil.pl)
+## Wdrożenie (cms2.feer.org.pl)
 
 ```bash
 git clone https://github.com/ziemowit-gil/wecms-licencje.git
 cd wecms-licencje
 composer84 install --no-dev --optimize-autoloader
-cp .env.example .env            # APP_URL=https://cms2.ziemowitgil.pl, APP_ENV=production, APP_DEBUG=false
+cp .env.example .env            # APP_URL=https://cms2.feer.org.pl, APP_ENV=production, APP_DEBUG=false
 php84 artisan key:generate
 touch database/database.sqlite
 php84 artisan migrate --force
