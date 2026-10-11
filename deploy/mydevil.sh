@@ -58,4 +58,5 @@ devil www restart "$DOMAIN" >/dev/null || true
 echo
 echo "Gotowe: https://$DOMAIN"
 echo "Konto w panelu:  $PHP artisan licencje:user twoj@adres.pl --name=\"Imię Nazwisko\""
-echo "SSL:             devil ssl www add \$(devil vhost list public | awk 'NR==3{print \$2}') le le $DOMAIN"
+echo "SSL:             devil vhost list public   # odczytaj IP, potem:"
+echo "                 devil ssl www add <IP> le le $DOMAIN"
