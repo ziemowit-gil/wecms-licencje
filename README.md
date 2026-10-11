@@ -12,13 +12,26 @@ przedłużanie, unieważnianie, dziennik zmian i API do sprawdzania licencji onl
 - Unieważnienie i zastąpienie widać tylko w panelu i w API `POST /api/v1/licenses/check` —
   podpisany klucz sam w sobie jest ważny do daty w nim zapisanej.
 
-## Wdrożenie (cms2.feer.org.pl)
+## Wdrożenie na MyDevil (cmslicense.feer.org.pl)
+
+```bash
+devil www add cmslicense.feer.org.pl php
+git clone https://github.com/ziemowit-gil/wecms-licencje.git ~/wecms-licencje
+bash ~/wecms-licencje/deploy/mydevil.sh cmslicense.feer.org.pl
+```
+
+Skrypt ustawia PHP 8.4, podpina `public_html` pod `public/`, instaluje zależności, tworzy `.env`,
+bazę SQLite i klucz do podpisywania. Aktualizacja: `git pull && bash deploy/mydevil.sh`.
+Rekord A domeny musi wskazywać na IP serwera (`devil vhost list public`), potem
+`devil ssl www add <IP> le le cmslicense.feer.org.pl`.
+
+## Wdrożenie na innym hostingu
 
 ```bash
 git clone https://github.com/ziemowit-gil/wecms-licencje.git
 cd wecms-licencje
 composer84 install --no-dev --optimize-autoloader
-cp .env.example .env            # APP_URL=https://cms2.feer.org.pl, APP_ENV=production, APP_DEBUG=false
+cp .env.example .env            # APP_URL=https://cmslicense.feer.org.pl, APP_ENV=production, APP_DEBUG=false
 php84 artisan key:generate
 touch database/database.sqlite
 php84 artisan migrate --force

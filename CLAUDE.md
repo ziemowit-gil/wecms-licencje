@@ -1,7 +1,7 @@
 # Panel licencji weCMS
 
 Laravel 13, SQLite, bez kroku budowania front-endu (CSS w `public/css/panel.css`).
-Docelowo: https://cms2.feer.org.pl (hosting z `php84`).
+Docelowo: https://cmslicense.feer.org.pl (hosting z `php84`).
 
 - Wystawia klucze licencyjne weCMS. Format klucza (`app/Licensing/LicenseKey.php`) MUSI zgadzać się
   z `App\Support\LicenseValidator` w repo feer-web — test `test_key_format_matches_wecms_validator`
