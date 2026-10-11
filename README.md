@@ -23,7 +23,7 @@ php84 artisan key:generate
 touch database/database.sqlite
 php84 artisan migrate --force
 php84 artisan licencje:keypair  # albo wgraj istniejący klucz prywatny i ustaw LICENSE_PRIVATE_KEY_PATH
-php84 artisan licencje:user ziemowit.gil@feer.org.pl --name="Ziemowit Gil"
+php84 artisan licencje:user admin@example.org --name="Imię Nazwisko"
 php84 artisan config:cache && php84 artisan route:cache && php84 artisan view:cache
 ```
 
